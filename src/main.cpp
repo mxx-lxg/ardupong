@@ -81,8 +81,8 @@ int randomDirection(){
 
 void printScore(){
   TV.select_font(font6x8);
-  TV.print(X_RES/3, 0, scoreA);
-  TV.print((X_RES/3)*2, 0, scoreB);
+  TV.print(X_RES/3-3, 0, scoreA);
+  TV.print((X_RES/3)*2-3, 0, scoreB);
 }
 
 int processStick(uint8_t input){
@@ -162,10 +162,6 @@ void drawIntro(){
   TV.select_font(font4x6);
   TV.print(38, 50, "by mxx-lxg");  
   TV.print(26, 80, "press right stick");
-
-  for(int i=0; i <=3; i++){
-    TV.set_pixel((X_RES/3)*i,0,WHITE);
-  }
 
   int buttonState = 0;
   while(1){
